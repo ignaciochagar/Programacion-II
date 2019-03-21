@@ -66,6 +66,10 @@ public class clsGestor {
 		objSocio.setIban(_iban);
 		
 		miLista.add(objSocio);
+		
+		//Creamos un objeto de la clase clsDatos, para poder insertar el socio creado en la base de datos
+		clsDatos objDatos = new clsDatos();
+		objDatos.insertarSocio(_nombre, _apellido1, _apellido2, _dni, _direccion, _codigoPostal, _fechaNacimiento, _telefono, _email, _iban);
 		}
 	/**
 	 * Este método permite crear objetos de la clase clsProfesor. Como parámetros le pasamos todos los atributos
@@ -93,6 +97,10 @@ public class clsGestor {
 		objProfesor.setDireccion(_direccion);
 		
 		miLista.add(objProfesor);
+		
+		//Creamos un objeto de la clase clsDatos, para poder insertar el profesor creado en la base de datos
+				clsDatos objDatos = new clsDatos();
+				objDatos.insertarProfesor (_nombre, _apellido1, _apellido2, _dni, _direccion);
 	}
 	public ArrayList<itfProperty>DameSocios()
 	{
