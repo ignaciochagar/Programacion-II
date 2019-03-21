@@ -1,5 +1,11 @@
 package LN;
 
+import static COMUN.clsConstantes.PROPIEDAD_USUARIO_NOMBRE;
+import static COMUN.clsConstantes.PROPIEDAD_USUARIO_APELLIDO1;
+import static COMUN.clsConstantes.PROPIEDAD_USUARIO_APELLIDO2;
+import static COMUN.clsConstantes.PROPIEDAD_USUARIO_DIRECCION;
+import static COMUN.clsConstantes.PROPIEDAD_USUARIO_DNI;
+
 import COMUN.itfProperty;
 
 /**
@@ -105,13 +111,26 @@ public abstract class clsUsuario implements itfProperty {
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
 	}
-	public Object getObjectProperty(Object propiedad) {
-		// TODO Auto-generated method stub
-		return null;
+	public Object getProperty(String propiedad) 
+	{
+		
+			switch(propiedad)
+			{
+			case PROPIEDAD_USUARIO_NOMBRE: return this.getNombre();
+			case PROPIEDAD_USUARIO_APELLIDO1: return this.getApellido1();
+			case PROPIEDAD_USUARIO_APELLIDO2: return this.getApellido2();
+			case PROPIEDAD_USUARIO_DIRECCION: return this.getDireccion();
+			case PROPIEDAD_USUARIO_DNI: return this.getDNI();
+			
+			
+			}
+			return propiedad;
+			
+		}
 	}
 	
 	
     
 
-}
+
 

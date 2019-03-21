@@ -1,9 +1,29 @@
 package LP;
 
 import java.util.ArrayList;
-
 import COMUN.itfProperty;
 import LN.clsGestor;
+import LN.clsProfesor;
+import LN.clsSocio;
+
+import static COMUN.clsConstantes.PROPIEDAD_SOCIO_NOMBRE;
+import static COMUN.clsConstantes.PROPIEDAD_SOCIO_APELLIDO1;
+import static COMUN.clsConstantes.PROPIEDAD_SOCIO_APELLIDO2;
+import static COMUN.clsConstantes.PROPIEDAD_SOCIO_DIRECCION;
+import static COMUN.clsConstantes.PROPIEDAD_SOCIO_DNI;
+import static COMUN.clsConstantes.PROPIEDAD_SOCIO_CODIGO_POSTAL;
+import static COMUN.clsConstantes.PROPIEDAD_SOCIO_FECHA_NACIMIENTO;
+import static COMUN.clsConstantes.PROPIEDAD_SOCIO_TELEFONO;
+import static COMUN.clsConstantes.PROPIEDAD_SOCIO_EMAIL;
+import static COMUN.clsConstantes.PROPIEDAD_SOCIO_IBAN;
+import static COMUN.clsConstantes.PROPIEDAD_PROFESOR_NOMBRE;
+import static COMUN.clsConstantes.PROPIEDAD_PROFESOR_APELLIDO1;
+import static COMUN.clsConstantes.PROPIEDAD_PROFESOR_APELLIDO2;
+import static COMUN.clsConstantes.PROPIEDAD_PROFESOR_DIRECCION;
+import static COMUN.clsConstantes.PROPIEDAD_PROFESOR_DNI;
+
+
+
 
 
 
@@ -121,7 +141,7 @@ public class clsMenu {
 	 * 
 	 * @param objG
 	 */
-	private static void eliminarProfesor(clsGestor objGestor) {
+	private static void eliminarProfesor(clsGestor objG) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -133,8 +153,26 @@ public class clsMenu {
 	 * 
 	 * @param objG
 	 */
-	private static void consultarProfesor(clsGestor objGestor) {
-		// TODO Auto-generated method stub
+	private static void consultarProfesor(clsGestor objG) 
+	{
+		ArrayList<itfProperty> profesores;
+		
+		profesores = objG.DameProfesores();
+		
+		for(itfProperty p:profesores)
+		{
+			
+			
+			System.out.println(p.getProperty(PROPIEDAD_PROFESOR_NOMBRE));
+			System.out.println(p.getProperty(PROPIEDAD_PROFESOR_APELLIDO1));
+			System.out.println(p.getProperty(PROPIEDAD_PROFESOR_APELLIDO2));
+			System.out.println(p.getProperty(PROPIEDAD_PROFESOR_DIRECCION));
+			System.out.println(p.getProperty(PROPIEDAD_PROFESOR_DNI));
+			
+			
+			
+		
+		}
 		
 	}
 
@@ -240,16 +278,28 @@ private static void modificarProfesor(clsGestor objGestor) {
 	 */
 	private static void consultarSocio(clsGestor objG) {
 		
-		ArrayList<itfProperty> usuarios;
+		ArrayList<itfProperty> socios;
 		
-		usuarios = objG.DameUsuarios();
+		socios = objG.DameSocios();
 		
-		for(itfProperty p:usuarios)
+		for(itfProperty p:socios)
 		{
-			System.out.println(p.getProperty("Nombre"));
-			System.out.println(p.getProperty("Creditos"));
+			
+			System.out.println(p.getProperty(PROPIEDAD_SOCIO_NOMBRE));
+			System.out.println(p.getProperty(PROPIEDAD_SOCIO_APELLIDO1));
+			System.out.println(p.getProperty(PROPIEDAD_SOCIO_APELLIDO2));
+			System.out.println(p.getProperty(PROPIEDAD_SOCIO_DIRECCION));
+			System.out.println(p.getProperty(PROPIEDAD_SOCIO_DNI));
+			System.out.println(p.getProperty(PROPIEDAD_SOCIO_CODIGO_POSTAL));
+			System.out.println(p.getProperty(PROPIEDAD_SOCIO_FECHA_NACIMIENTO));
+			System.out.println(p.getProperty(PROPIEDAD_SOCIO_TELEFONO));
+			System.out.println(p.getProperty(PROPIEDAD_SOCIO_EMAIL));
+			System.out.println(p.getProperty(PROPIEDAD_SOCIO_IBAN));
+			
+			
 		}
-	}
+		}
+	
 
 	
 	/**
@@ -258,8 +308,9 @@ private static void modificarProfesor(clsGestor objGestor) {
 	 * 
 	 * @param objG
 	 */
-	private static void eliminarSocio(clsGestor objG) {
-		// TODO Auto-generated method stub
+	private static void eliminarSocio(clsGestor objG)
+	{
+		
 		
 	}
 

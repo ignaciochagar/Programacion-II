@@ -8,7 +8,7 @@ public class clsMain {
 		
 		objMenu = new clsMenu();
 		
-		objMenu.MenuPrincipal();
+		clsMenu.MenuPrincipal();
 	}
 
 }

@@ -5,6 +5,12 @@ import static COMUN.clsConstantes.PROPIEDAD_SOCIO_NOMBRE;
 import static COMUN.clsConstantes.PROPIEDAD_SOCIO_APELLIDO1;
 import static COMUN.clsConstantes.PROPIEDAD_SOCIO_APELLIDO2;
 import static COMUN.clsConstantes.PROPIEDAD_SOCIO_DIRECCION;
+import static COMUN.clsConstantes.PROPIEDAD_SOCIO_DNI;
+import static COMUN.clsConstantes.PROPIEDAD_SOCIO_CODIGO_POSTAL;
+import static COMUN.clsConstantes.PROPIEDAD_SOCIO_FECHA_NACIMIENTO;
+import static COMUN.clsConstantes.PROPIEDAD_SOCIO_TELEFONO;
+import static COMUN.clsConstantes.PROPIEDAD_SOCIO_EMAIL;
+import static COMUN.clsConstantes.PROPIEDAD_SOCIO_IBAN;
 /**
  * @author Ignacio Chapero
  * 		   Alvaro Husillos
@@ -45,6 +51,10 @@ public class clsSocio extends clsUsuario {
 	{
 		super();
 		this.codigoPostal= _codigoPostal;
+		this.fechaNacimiento= _fechaNacimiento;
+		this.telefono= _telefono;
+		this.email= _email;
+		this.iban= _iban;
 	}
 
 	
@@ -91,7 +101,7 @@ public class clsSocio extends clsUsuario {
 	
 
 	@Override
-	public Object getProperty(String propiedad)
+	public  Object getProperty(String propiedad)
 	{
 		switch(propiedad)
 		{
@@ -99,9 +109,16 @@ public class clsSocio extends clsUsuario {
 		case PROPIEDAD_SOCIO_APELLIDO1: return this.getApellido1();
 		case PROPIEDAD_SOCIO_APELLIDO2: return this.getApellido2();
 		case PROPIEDAD_SOCIO_DIRECCION: return this.getDireccion();
+		case PROPIEDAD_SOCIO_DNI: return this.getDNI();
+		case PROPIEDAD_SOCIO_CODIGO_POSTAL: return this.getCodigoPostal();
+		case PROPIEDAD_SOCIO_TELEFONO: return this.getTelefono();
+		case PROPIEDAD_SOCIO_EMAIL: return this.getEmail();
+		case PROPIEDAD_SOCIO_FECHA_NACIMIENTO: return this.getFechaNacimiento();
+		case PROPIEDAD_SOCIO_IBAN: return this.getIban();
 		
 		
 		}
+		return propiedad;
 		
 	}
 

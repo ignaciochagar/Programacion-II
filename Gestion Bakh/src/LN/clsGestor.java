@@ -22,7 +22,7 @@ public class clsGestor {
 	{
 		miLista = new ArrayList<clsUsuario>();
 		objDatos = new clsDatos();
-		objDatos.Connect();
+		//objDatos.Connect();
 		
 	}
 	
@@ -51,7 +51,7 @@ public class clsGestor {
 	{
 		clsSocio objSocio;
 		
-		objSocio = new clsSocio(_nombre, _apellido1, _apellido2, dni,
+		objSocio = new clsSocio(_nombre, _apellido1, _apellido2, _dni,
 				_direccion, _codigoPostal, _fechaNacimiento, _telefono,
 				_email, _iban);
 		
@@ -77,11 +77,6 @@ public class clsGestor {
 	 * @param _apellido2
 	 * @param _dni
 	 * @param _direccion
-	 * @param _codigoPostal
-	 * @param _fechaNacimiento
-	 * @param _telefono
-	 * @param _email
-	 * @param _iban
 	 * 
 	 * El método no tiene ningún retorno, simplemente añade un objeto profesor al ArrayList miLista
 	 */
@@ -99,14 +94,36 @@ public class clsGestor {
 		
 		miLista.add(objProfesor);
 	}
-	public ArrayList<itfProperty>DameUsuarios()
+	public ArrayList<itfProperty>DameSocios()
 	{
 		ArrayList<itfProperty> retorno;
 		
 		retorno = new ArrayList<itfProperty>();
 		
 		for(clsUsuario a: miLista)
+			if(a instanceof clsSocio)
 			retorno.add(a);
 		
 		return retorno;
+
+	}
+	
+	public ArrayList<itfProperty>DameProfesores()
+	{
+		ArrayList<itfProperty> retorno;
+		
+		retorno = new ArrayList<itfProperty>();
+		
+		
+		for(clsUsuario a: miLista)
+			if(a instanceof clsProfesor)
+				retorno.add(a);
+		
+		return retorno;
+
+	}
+
+	
+	
+	
 }
