@@ -13,6 +13,7 @@ public class clsConstantes
 	public static final String PROPIEDAD_SOCIO_EMAIL = "EMAIL";
 	public static final String PROPIEDAD_SOCIO_FECHA_NACIMIENTO = "FECHA NACIMIENTO";
 	public static final String PROPIEDAD_SOCIO_IBAN = "IBAN";
+	public static final String PROPIEDAD_SOCIO_IDTIPO_SOCIO = "IDTIPO_SOCIO";
 	
 	//CONSTANTES PARA EL ACCESO A LAS PROPIEDADES DEL OBJETO PROFESOR
 	public static final String PROPIEDAD_PROFESOR_NOMBRE = "NOMBRE";
@@ -28,5 +29,11 @@ public class clsConstantes
 	public static final String PROPIEDAD_USUARIO_DIRECCION = "DIRECCION";
 	public static final String PROPIEDAD_USUARIO_DNI = "DNI";
 	
-
+	//CONSTANTES PARA EL ACCESO A LAS PROPIEDADES DEL OBJETO TIPO DE SOCIO
+	public static final String PROPIEDAD_TIPO_SOCIO_ID = "IDTIPO_SOCIO";
+	public static final String PROPIEDAD_TIPO_SOCIO_NOMBRE = "NOMBRE";
+	public static final String PROPIEDAD_TIPO_SOCIO_DESCRIPCION = "DESCRIPCION";
+	public static final String PROPIEDAD_TIPO_SOCIO_CUOTA = "CUOTA";
+	
 }
+

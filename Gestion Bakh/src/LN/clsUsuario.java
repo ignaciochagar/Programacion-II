@@ -12,9 +12,9 @@ import COMUN.itfProperty;
  * @author Ignacio Chapero
  * 		   Alvaro Husillos
  * 
- * Esta clase es abstracta para que por higiene de programación no nos deje crear objetos de la misma.
- * Esta clase es la clase padre de clsSocio y clsProfesor, de tal forma que los atributos y métodos de 
- * esta clasé serán heredados por clsSocio y clsProfesor.
+ * Esta clase es abstracta para que por higiene de programacion no nos deje crear objetos de la misma.
+ * Esta clase es la clase padre de clsSocio y clsProfesor, de tal forma que los atributos y metodos de 
+ * esta clase seran heredados por clsSocio y clsProfesor.
  *
  */
 public abstract class clsUsuario implements itfProperty {
@@ -23,25 +23,28 @@ public abstract class clsUsuario implements itfProperty {
     Atributo nombre de la persona.
     */
     private String nombre;
+    
     /**
      *  Atributo apellido1 de la persona.
      */
     private String apellido1;
+    
     /**
      *  Atributo apellido2 de la persona.
      */
     private String apellido2;
+    
     /**
      *  Atributo dni de la persona.
      */
     private String dni;
+    
     /**
-     *  Atributo dirección de la persona.
+     *  Atributo direccion de la persona.
      */
     private String direccion;
     
     public clsUsuario() {
-    	
     	
     	this.nombre="";
     	this.apellido1="";
@@ -50,20 +53,20 @@ public abstract class clsUsuario implements itfProperty {
     	this.direccion="";
     	
     }
+    
     /**
-     * Constructor de la clase clsUsuario. Necesita como parámetros los atributos de esta clase, que son los
+     * Constructor de la clase clsUsuario. Necesita como parametros los atributos de esta clase, que son los
      * inicializados anteriormente.
      * 
-     * @param _nombre
-     * @param _apellido1
-     * @param _apellido2
-     * @param _dni
-     * @param _direccion
+     * @param _nombre Nombre del Usuario
+     * @param _apellido1 Primer apellido del usuario
+     * @param _apellido2 Segundo apellido del usuario
+     * @param _dni DNI del usuario
+     * @param _direccion Direccion del usuario
      * 
-     * No tiene ningún retorno.
+     * No tiene ningun retorno.
      */
 	public clsUsuario(String _nombre, String _apellido1, String _apellido2, String _dni, String _direccion) {
-		
 		
 		this.dni = _dni;
 		this.nombre = _nombre;
@@ -111,8 +114,8 @@ public abstract class clsUsuario implements itfProperty {
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
 	}
-	public Object getProperty(String propiedad) 
-	{
+	
+	public Object getProperty(String propiedad){
 		
 			switch(propiedad)
 			{
@@ -120,13 +123,56 @@ public abstract class clsUsuario implements itfProperty {
 			case PROPIEDAD_USUARIO_APELLIDO1: return this.getApellido1();
 			case PROPIEDAD_USUARIO_APELLIDO2: return this.getApellido2();
 			case PROPIEDAD_USUARIO_DIRECCION: return this.getDireccion();
-			case PROPIEDAD_USUARIO_DNI: return this.getDNI();
-			
+			case PROPIEDAD_USUARIO_DNI: return this.getDNI();	
 			
 			}
 			return propiedad;
 			
 		}
+
+	/* 
+	 * El metodo hashCode sirve para distinguir que dos objetos de la clase clsUsurario son iguales o no en 
+	 * funcion de su dni.
+	 */
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((dni == null) ? 0 : dni.hashCode());
+		return result;
+	}
+
+	/* El metodo equals sirve para distinguir que dos objetos de la clase clsUsurario son iguales o no en 
+	 * funcion de su dni.
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		
+		if (this == obj) {
+			
+			return true;
+		}
+		if (obj == null) {
+			
+			return false;
+		}
+		if (getClass() != obj.getClass()) {
+			
+			return false;
+		}
+		clsUsuario other = (clsUsuario) obj;
+		if (dni == null) {
+			if (other.dni != null) {
+				
+				return false;
+			}
+		} else if (!dni.equals(other.dni)) {
+			
+			return false;
+		}
+		
+		return true;
+	}
 	}
 	
 	
