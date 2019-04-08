@@ -5,8 +5,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashSet;
 
-import COMUN.clsSocioRepetidoException;
 import COMUN.itfProperty;
+import EXCEPCIONES.clsSocioRepetidoException;
 import LD.clsDatos;
 import LN.clsTipoSocio;
 import LN.clsSocio;

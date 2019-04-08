@@ -3,8 +3,8 @@ package LP;
 //Importamos todas las clases y todas las constantes que vamos a utilizar en la clsMenu
 import java.util.ArrayList;
 
-import COMUN.clsSocioRepetidoException;
 import COMUN.itfProperty;
+import EXCEPCIONES.clsSocioRepetidoException;
 import LN.clsGestor;
 import LN.clsProfesor;
 import LN.clsSocio;
@@ -53,8 +53,13 @@ public class clsMenu {
 	{
 		int op = 0;
 		clsGestor objGestor = new clsGestor();
+
 		
 		System.out.println("Bienvenido a la aplicaciï¿½n Gestiï¿½n del Bakh");
+
+		//
+		System.out.println("Bienvenido a la aplicación Gestión del Bakh");
+
 		
 		//Con el bucle do-while mostramos el menu continuamente mientras el usuario no decida salir de la aplicacion
 		do

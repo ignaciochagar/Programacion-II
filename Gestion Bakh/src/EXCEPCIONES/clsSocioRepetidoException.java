@@ -1,4 +1,4 @@
-package COMUN;
+package EXCEPCIONES;
 
 /**
  * @author Ignacio Chapero
